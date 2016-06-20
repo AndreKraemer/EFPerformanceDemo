@@ -27,7 +27,7 @@ namespace EFPerformance
                 }
             }
         }
-
+       
         private IEnumerable<Customers> GetCustomers(NorthwindDb db)
         {
             return db.Customers;
@@ -38,7 +38,7 @@ namespace EFPerformance
             Console.WriteLine("LateFilterDemo");
             using (var db = new NorthwindDb())
             {
-                var customers = GetCustomersQry(db).Where(c => c.Country == "Germany");
+                var customers = GetCustomers2(db).Where(c => c.Country == "Germany");
                 foreach (var customer in customers)
                 {
                     Console.WriteLine("{0} - {1}", customer.CustomerID, customer.CompanyName);
@@ -49,7 +49,7 @@ namespace EFPerformance
 
 
 
-        private IQueryable<Customers> GetCustomersQry(NorthwindDb db)
+        private IQueryable<Customers> GetCustomers2(NorthwindDb db)
         {
             return db.Customers;
         }

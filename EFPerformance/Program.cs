@@ -22,7 +22,8 @@ namespace EFPerformance
     {
         static void Main(string[] args)
         {
-            //HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
+
+            HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
 
             var sw = new Stopwatch();
             Console.WriteLine("Starte Warmup");
@@ -33,7 +34,7 @@ namespace EFPerformance
 
             IDemo demo;
 
-            demo = new ProjectionDemo();
+             demo = new ProjectionDemo();
             // demo = new ChangeTrackingDemo();
             // demo = new ManyRowsDemo();
 
@@ -42,9 +43,9 @@ namespace EFPerformance
 
             // demo = new ReloadingEntitiesDemo();
             // demo = new DeleteDemo();
-            // demo = new ColumnTypeDemo();
-            // demo = new ContainsDemo();
-            // demo = new SelectNPlusOneDemo();
+            //demo = new ColumnTypeDemo();
+            //demo = new ContainsDemo();
+            //demo = new SelectNPlusOneDemo();
 
             Console.WriteLine("Start Demo ...");
             Console.ReadLine();
@@ -64,7 +65,7 @@ namespace EFPerformance
         {
             using (var db = new NorthwindDb())
             {
-                var customer = db.Customers.Where(c => c.CustomerID == "11111");
+                db.Customers.Where(c => c.CustomerID == "-1").ToList();
             }
         }
     }
