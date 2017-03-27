@@ -22,9 +22,9 @@ namespace EFPerformance
     {
         static void Main(string[] args)
         {
-
-            HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
-
+            Console.WriteLine("Demonstration typischer Entity Framework Performance-Probleme. (c) André Krämer");
+            //HibernatingRhinos.Profiler.Appender.EntityFramework.EntityFrameworkProfiler.Initialize();
+          
             var sw = new Stopwatch();
             Console.WriteLine("Starte Warmup");
             sw.Start();
@@ -43,9 +43,9 @@ namespace EFPerformance
 
             // demo = new ReloadingEntitiesDemo();
             // demo = new DeleteDemo();
-            //demo = new ColumnTypeDemo();
-            //demo = new ContainsDemo();
-            //demo = new SelectNPlusOneDemo();
+            // demo = new ColumnTypeDemo();
+            // demo = new ContainsDemo();
+            // demo = new SelectNPlusOneDemo();
 
             Console.WriteLine("Start Demo ...");
             Console.ReadLine();
